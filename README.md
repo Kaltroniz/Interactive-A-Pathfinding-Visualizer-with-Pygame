@@ -2,8 +2,10 @@
 
 An interactive visualization tool for the A* (A-star) pathfinding algorithm, built using Python and Pygame. This project combines algorithmic logic with intuitive design to help learners and developers explore how A* efficiently finds the shortest path in a grid-based environment.
 
-![A* Visualization Demo](https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif)  
+ 
+![Screenshot 2025-07-04 013049](https://github.com/user-attachments/assets/b3de8cc4-a019-4ebe-8c50-fe070c69a6d3)
 
+![image](https://github.com/user-attachments/assets/759cb506-5591-442f-9ef5-0611e46bd1c8)
 
 ---
 
@@ -61,35 +63,22 @@ python main.py
 ```
 ---
 
-## 🧠 How It Works
+## 🧠 A* Algorithm Execution
 
--**Grid Creation**
-  Initializes a 2D grid where each cell is a Spot object with position, color, and neighbor      tracking.
+- Maintain g_score, h_score (Manhattan), and f_score = g + h.
 
--**User Interaction**
+- Use a priority queue to pick the lowest‑f node each step.
 
-  -Left‑click: place start, end, or walls
+- Update neighbor scores and track predecessors in came_from.
 
-  -Right‑click: erase
+---
 
-  -Spacebar: run A*
-
-  -C: clear grid
-
--**A* Algorithm Execution**
-
-  -Maintain g_score, h_score (Manhattan), and f_score = g + h.
-
-  -Use a priority queue to pick the lowest‑f node each step.
-
-  -Update neighbor scores and track predecessors in came_from.
-
--**Path Reconstruction**
+## Path Reconstruction
   Backtrack from the end node via the came_from map to draw the shortest path.
 
 ---
 
-##📐 Heuristic Function
+## 📐 Heuristic Function
 
 ```python
 Copy
@@ -97,5 +86,5 @@ Edit
 def h(p1, p2):
     return abs(p1.x - p2.x) + abs(p1.y - p2.y)
 ```
-##🙋 Author
+## 🙋 Author
 Vivek C K
